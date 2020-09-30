@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="model.BL.to">
+    <class name="model.BL.to.PersonTO" table="PERSON">
+
+        <id name="id" type="long" column="PERSON_ID">
+            <generator class="increment"/>
+        </id>
+
+
+        <!--<property name="address_list" type="java.lang.String" column="address_list" />-->
+        <property name="name" type="java.lang.String" column="NAME" />
+        <property name="family" type="java.lang.String" column="FAMILY" />
+
+
+        <list name="address_list" cascade="all">
+            <key column="person_id"/> <!--foreign key-->
+            <index column="record_version"/>
+            <one-to-many class="model.BL.to.AddressesTO"/>   <!--noe rabeteh-->
+
+        </list>
+
+
+    </class>
+</hibernate-mapping>

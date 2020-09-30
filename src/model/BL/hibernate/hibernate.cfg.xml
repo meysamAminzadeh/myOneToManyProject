@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+
+        <!--my sql-->
+
+
+        <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property> <!-- driver DB marbooteh -->
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@192.168.142.128:1521:orcl</property>  <!-- uri DB marbooteh -->
+        <property name="hibernate.connection.username">system</property>
+        <property name="hibernate.connection.password">12345</property>
+
+       <!--<property name="hbm2ddl.auto">create-drop</property>-->
+        <property name="show_sql">true</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <mapping resource="model/BL/to/PersonTO.hbm.xml"/>
+        <mapping resource="model/BL/to/AddressesTO.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

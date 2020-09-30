@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="model.BL.to">
+
+    <class name="MobileTO" table="Mobile" catalog="system">
+
+        <id name="id" type="long" column="MOBILE_ID">
+            <generator class="increment"/>
+        </id>
+
+        <property name="mobileNumber" type="java.lang.String" column="MOBILE_NUMBER"/>
+
+    </class>
+</hibernate-mapping>
